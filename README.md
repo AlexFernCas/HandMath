@@ -5,6 +5,55 @@ Este proyecto implementa un modelo de red neuronal capaz de clasificar operacion
 Incluye todo el flujo: desde la normalización de datos, preparación del dataset, entrenamiento del modelo y evaluación de resultados.
 El paso a paso detallado para reproducir el proyecto se encuentra en el notebook Calculadora_NN.ipynb.
 
+---
+
+# 🎥 Demo
+
+## Creación de datos de entrenamiento:
+
+Ejecución del script capture_data.py.
+
+Flujo:
+
+* Fase 1: Posicionar la mano mostrando un número.
+
+* Fase 2: Pulsar la tecla que corresponde al número para generar la etiqueta.
+
+* Fase 3: Repetir fase 1 y 2 tantas veces como se desee.
+
+* Fase 4: Pulsar tecla "q" para finalizar ejecución y generar archivo de datos.
+
+![Demo del proyecto](./media/capture_data.mp4)
+
+## Normalización de datos
+
+Ejecución de normalize.py.
+
+
+## Entrenamiento red neuronal:
+
+Ejecución del script neuronal_network.py. 
+
+![Demo del proyecto](./media/neuronal_network.mp4)
+
+## Demostración en tiempo real: 
+
+Ejecución script hand_calc.py.
+
+Flujo:
+
+* Fase 1: muestra primer número con la mano → ENTR (confirmar).
+
+* Fase 2: seleccionar operación con la mano (1:+ 2:- 3:/ 4:*) → ENTR.
+
+* Fase 3: mostrar segundo número → ENTR.
+
+* Fase 4: resultado en pantalla. ENTR para reiniciar.
+
+![Demo del proyecto](./media/capture_data.mp4)
+
+---
+
 # 📌 Características principales
 
 Entrenamiento con dataset propio generado programáticamente.
@@ -17,29 +66,7 @@ Implementado con TensorFlow y Keras.
 
 Código modular y fácil de ampliar con más operaciones o complejidad.
 
-# 🎥 Demo
-
-## Creación de datos de entrenamiento:
-
-<video src="./media/capture_data.mp4" controls width="600"></video>
-
-## Entrenamiento red neuronal:
-
-<video src="./media/neuronal_network.mp4" controls width="600"></video>
-
-## Demostración en tiempo real: 
-
-Flujo:
-
-* Fase 1: muestra primer número con la mano → ENTR (confirmar).
-
-* Fase 2: seleccionar operación con la mano (1:+ 2:- 3:/ 4:*) → ENTR.
-
-* Fase 3: mostrar segundo número → ENTR.
-
-* Fase 4: resultado en pantalla. ENTR para reiniciar.
-
-<video src="./media/capture_data.mp4" controls width="600"></video>
+---
 
 # 📁 Estructura del proyecto
 
@@ -59,16 +86,20 @@ artifacts/scaler.save → Objeto guardado del escalador utilizado para normaliza
 
 requirements.txt → Lista de dependencias necesarias.
 
+---
+
 # 🛠️ Instalación
 
-Crear entorno virtual con Anaconda (opcional pero recomendado)
+## Crear entorno virtual con Anaconda (opcional pero recomendado)
 
 conda create -n calc_nn python=3.10
 conda activate calc_nn
 
-Instalar dependencias
+## Instalar dependencias
 
 pip install -r requirements.txt
+
+---
 
 # 🚀 Entrenamiento y Resultados
 
@@ -84,10 +115,15 @@ Optimizer: Adam
 
 Loss: Categorical Crossentropy
 
+---
+___
+
 # 📊 Precisión final: ~96,92% en el conjunto de prueba.
 El modelo muestra un alto rendimiento en la clasificación de operaciones matemáticas simples.
 
 <img src="./media/results_test.png" controls width="600">
+
+---
 
 # 📌 Notas
 El modelo se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente como el que se especifica en el apartado Entrenamiento y pruebas.
@@ -96,6 +132,7 @@ El modelo y el escalador se guardan y se cargan para inferencia en tiempo real.
 
 El proyecto no incluye los modelos, escaladores y datos generados.
 
+---
 
 # 📜 Licencia
 Todos los derechos reservados.
