@@ -30,11 +30,11 @@ Ejecución de normalize.py.
 
 Flujo:
 
-* Fase 1: Convertir puntos a matriz (21 puntos x 3 coordenadas)
+* Fase 1: Convertir puntos a matriz. Cada punto tiene 3 coordenadas (X, Y, Z), y en cada captura de la mano hay 21 puntos (landmarks). Se organiza en matriz 21x3 para manipular más fácil.
 
-* Fase 2: Normalizar esos puntos. 
+* Fase 2: Normalización. Se establece el centro en el punto de la muñeca y se escala según la distáncia máxima. Esto permite que no afecte el tamaño de la mano ni la distáncia a la cámara. 
 
-* Fase 3: Convertir la matriz a vector.
+* Fase 3: Convertir la matriz a vector. Se "aplasta" la matriz para obtener un vector plano (1D) ya que es el tipo de dato que espera como entrada una red neuronal.
 
 
 ### Paso 3. Entrenamiento red neuronal:
@@ -50,13 +50,13 @@ Ejecución script hand_calc.py.
 
 Flujo:
 
-* Fase 1: muestra primer número con la mano → ENTR (confirmar).
+* Fase 1: Mostrar primer número con la mano → ENTER (confirmar).
 
-* Fase 2: seleccionar operación con la mano (1:+ 2:- 3:/ 4:*) → ENTR.
+* Fase 2: Seleccionar operación con la mano (1:+ 2:- 3:/ 4:*) → ENTER.
 
-* Fase 3: mostrar segundo número → ENTR.
+* Fase 3: Mostrar segundo número → ENTER.
 
-* Fase 4: resultado en pantalla. ENTR para reiniciar.
+* Fase 4: Resultado en pantalla. ENTER para reiniciar.
 
 ![Demostración modelo](./media/hand_calc.gif)
 
@@ -112,7 +112,7 @@ pip install -r requirements.txt
 
 # 🚀 Entrenamiento y Resultados
 
-### El modelo se entrenó con:
+### Modelo entrenado con:
 
 Capa oculta: 64 neuronas (ReLU)
 
@@ -137,9 +137,10 @@ El modelo muestra un alto rendimiento en la clasificación de operaciones matem�
 ---
 
 # 📌 Notas
-El modelo se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente como el que se especifica en el apartado Entrenamiento y pruebas.
 
-El modelo y el escalador se guardan y se cargan para inferencia en tiempo real.
+El modelo se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente, como el que se especifica en el apartado Entrenamiento y Resultados.
+
+El modelo y el escalador se guardan y se cargan más tarde para inferencia en tiempo real.
 
 El proyecto no incluye los modelos, escaladores y datos generados.
 
