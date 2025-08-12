@@ -1,6 +1,6 @@
 # 🧮 Clasificador de Operaciones Matemáticas con TensorFlow
 
-Este proyecto implementa un modelo de red neuronal capaz de clasificar operaciones matemáticas simples en sus respectivas categorías (suma, resta, multiplicación, división, etc.).
+Este proyecto implementa un modelo de red neuronal capaz de clasificar y realizar operaciones matemáticas simples en sus respectivas categorías (suma, resta, división, multiplicación) identificando la posición de la mano e interpretándola como un número.
 
 Incluye todo el flujo: desde la normalización de datos, preparación del dataset, entrenamiento del modelo y evaluación de resultados.
 El paso a paso detallado para reproducir el proyecto se encuentra en el notebook Calculadora_NN.ipynb.
@@ -9,7 +9,7 @@ El paso a paso detallado para reproducir el proyecto se encuentra en el notebook
 
 # 🎥 Demo
 
-## Creación de datos de entrenamiento:
+### Creación de datos de entrenamiento:
 
 Ejecución del script capture_data.py.
 
@@ -25,19 +25,19 @@ Flujo:
 
 ![Creación de datos](https://img.youtube.com/vi/IiIeYsScqVs/hqdefault.jpg)](https://www.youtube.com/watch?v=IiIeYsScqVs)
 
-## Normalización de datos
+### Normalización de datos
 
 Ejecución de normalize.py.
 
 
-## Entrenamiento red neuronal:
+### Entrenamiento red neuronal:
 
 Ejecución del script neuronal_network.py. 
 
 [![Entrenamiento modelo](https://img.youtube.com/vi/cvJWNmUltAQ/hqdefault.jpg)](https://www.youtube.com/watch?v=cvJWNmUltAQ)
 
 
-## Demostración en tiempo real: 
+### Demostración en tiempo real: 
 
 Ejecución script hand_calc.py.
 
@@ -73,9 +73,9 @@ Código modular y fácil de ampliar con más operaciones o complejidad.
 
 La carpeta principal incluye todo lo necesario para reproducir y entrenar el modelo:
 
-src/capture_data.py → Generación de datos un número con la mano y pulsado su tecla correspondiente para generar la etiqueta.
+src/capture_data.py → Generación de datos. Mostrar un número con la mano y pulsar su tecla correspondiente para generar la etiqueta.
 
-src/normalize.py → Script para normalizar y preparar datos de entrada.
+src/normalize.py → Normalización y preparación de datos de entrada.
 
 src/neuronal_network.py → Entrenamiento de red neuronal.
 
@@ -91,12 +91,12 @@ requirements.txt → Lista de dependencias necesarias.
 
 # 🛠️ Instalación
 
-## Crear entorno virtual con Anaconda (opcional pero recomendado)
+### Crear entorno virtual con Anaconda (opcional pero recomendado)
 
 conda create -n calc_nn python=3.10
 conda activate calc_nn
 
-## Instalar dependencias
+### Instalar dependencias
 
 pip install -r requirements.txt
 
