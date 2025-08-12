@@ -23,7 +23,7 @@ Flujo:
 
 * Fase 4: Pulsar tecla "q" para finalizar ejecución y generar archivo de datos.
 
-![Creación de datos](./media/capture_data.mp4)
+![Creación de datos](https://img.youtube.com/vi/IiIeYsScqVs/hqdefault.jpg)](https://www.youtube.com/watch?v=IiIeYsScqVs)
 
 ## Normalización de datos
 
@@ -34,7 +34,8 @@ Ejecución de normalize.py.
 
 Ejecución del script neuronal_network.py. 
 
-![Entrenamiento modelo](./media/neuronal_network.mp4)
+[![Entrenamiento modelo](https://img.youtube.com/vi/cvJWNmUltAQ/hqdefault.jpg)](https://www.youtube.com/watch?v=cvJWNmUltAQ)
+
 
 ## Demostración en tiempo real: 
 
@@ -50,7 +51,7 @@ Flujo:
 
 * Fase 4: resultado en pantalla. ENTR para reiniciar.
 
-![Demostración modelo](./media/capture_data.mp4)
+![Demostración modelo](https://img.youtube.com/vi/aGR7vIqc-M8/hqdefault.jpg)](https://www.youtube.com/watch?v=aGR7vIqc-M8)
 
 ---
 
