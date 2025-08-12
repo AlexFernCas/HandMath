@@ -23,7 +23,7 @@ Flujo:
 
 * Fase 4: Pulsar tecla "q" para finalizar ejecución y generar archivo de datos.
 
-![Demo del proyecto](./media/capture_data.mp4)
+![Creación de datos](./media/capture_data.mp4)
 
 ## Normalización de datos
 
@@ -34,7 +34,7 @@ Ejecución de normalize.py.
 
 Ejecución del script neuronal_network.py. 
 
-![Demo del proyecto](./media/neuronal_network.mp4)
+![Entrenamiento modelo](./media/neuronal_network.mp4)
 
 ## Demostración en tiempo real: 
 
@@ -50,7 +50,7 @@ Flujo:
 
 * Fase 4: resultado en pantalla. ENTR para reiniciar.
 
-![Demo del proyecto](./media/capture_data.mp4)
+![Demostración modelo](./media/capture_data.mp4)
 
 ---
 
@@ -116,7 +116,6 @@ Optimizer: Adam
 Loss: Categorical Crossentropy
 
 ---
-___
 
 # 📊 Precisión final: ~96,92% en el conjunto de prueba.
 El modelo muestra un alto rendimiento en la clasificación de operaciones matemáticas simples.
