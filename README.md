@@ -94,6 +94,7 @@ requirements.txt → Lista de dependencias necesarias.
 ### Crear entorno virtual con Anaconda (opcional pero recomendado)
 
 conda create -n calc_nn python=3.10
+
 conda activate calc_nn
 
 ### Instalar dependencias
@@ -104,7 +105,7 @@ pip install -r requirements.txt
 
 # 🚀 Entrenamiento y Resultados
 
-El modelo se entrenó con:
+### El modelo se entrenó con:
 
 Capa oculta: 64 neuronas (ReLU)
 
@@ -118,7 +119,10 @@ Loss: Categorical Crossentropy
 
 ---
 
-# 📊 Precisión final: ~96,92% en el conjunto de prueba.
+# 📊 Precisión final: 
+
+96,92% de precisión en el conjunto de prueba.
+
 El modelo muestra un alto rendimiento en la clasificación de operaciones matemáticas simples.
 
 <img src="./media/results_test.png" controls width="600">

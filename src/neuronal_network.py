@@ -34,7 +34,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_cat, test_size=0
 
 # Crear modelo
 model = Sequential([
-    Dense(128, input_shape=(X_train.shape[1],), activation='relu'),
+    Dense(64, input_shape=(X_train.shape[1],), activation='relu'),
     Dropout(0.3),
     Dense(64, activation='relu'),
     Dropout(0.3),
