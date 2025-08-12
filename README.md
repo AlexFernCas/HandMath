@@ -2,14 +2,13 @@
 
 Este proyecto implementa un modelo de red neuronal capaz de clasificar y realizar operaciones matemáticas simples en sus respectivas categorías (suma, resta, división, multiplicación) identificando la posición de la mano e interpretándola como un número.
 
-Incluye todo el flujo: desde la normalización de datos, preparación del dataset, entrenamiento del modelo y evaluación de resultados.
-El paso a paso detallado para reproducir el proyecto se encuentra en el notebook Calculadora_NN.ipynb.
+Incluye todo el flujo: desde la preparación del dataset, la normalización de datos, entrenamiento del modelo y evaluación de resultados.
 
 ---
 
 # 🎥 Demo
 
-### Creación de datos de entrenamiento:
+### Paso 1. Creación de datos de entrenamiento:
 
 Ejecución del script capture_data.py.
 
@@ -25,19 +24,27 @@ Flujo:
 
 ![Creación de datos](./media/capture_data.gif)
 
-### Normalización de datos
+### Paso 2. Normalización de datos
 
 Ejecución de normalize.py.
 
+Flujo:
 
-### Entrenamiento red neuronal:
+* Fase 1: Convertir puntos a matriz (21 puntos x 3 coordenadas)
+
+* Fase 2: Normalizar esos puntos. 
+
+* Fase 3: Convertir la matriz a vector.
+
+
+### Paso 3. Entrenamiento red neuronal:
 
 Ejecución del script neuronal_network.py. 
 
 ![Entrenamiento modelo](./media/neuronal_network.gif)
 
 
-### Demostración en tiempo real: 
+### Paso 4. Demostración en tiempo real: 
 
 Ejecución script hand_calc.py.
 
