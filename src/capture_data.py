@@ -4,8 +4,8 @@ import numpy as np
 import csv
 import os
 
-# === Configuración ===
-DATA_DIR = "data"
+# Configuración
+DATA_DIR = "../data"
 os.makedirs(DATA_DIR, exist_ok=True)
 CSV_FILE = os.path.join(DATA_DIR, "hand_gestures.csv")
 
@@ -41,7 +41,7 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
 
-    # Guardar datos si pulsas número
+    # Guardar datos
     if key in range(ord('0'), ord('9') + 1):
         label = chr(key)
         if result.multi_hand_landmarks:
@@ -51,7 +51,7 @@ while True:
                     row.extend([lm.x, lm.y, lm.z])  # coordenadas normalizadas
 
             # Rellenar con ceros si solo hay una mano
-            num_features = 21 * 3 * 2  # 2 manos * 21 puntos * 3 coords
+            num_features = 21 * 3 * 2 
             while len(row) < num_features + 1:
                 row.extend([0.0, 0.0, 0.0])
 

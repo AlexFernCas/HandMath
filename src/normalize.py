@@ -1,16 +1,13 @@
 import numpy as np
 import csv
+from utils import normalize_landmarks
 
-def normalize_landmarks(landmarks):
-    origin = landmarks[0]
-    landmarks = landmarks - origin
-    max_dist = np.max(np.linalg.norm(landmarks, axis=1))
-    if max_dist > 0:
-        landmarks = landmarks / max_dist
-    return landmarks
+# Configuración
+INPUT_FILE_PATH = '../data/hand_gestures.csv'
+OUTPUT_FILE_PATH = '../data/hand_gestures_normalized.csv'
 
-input_file = 'data/hand_gestures.csv'
-output_file = 'data/hand_gestures_normalized.csv'
+input_file = INPUT_FILE_PATH
+output_file = OUTPUT_FILE_PATH
 
 with open(input_file, newline='') as csvfile_in, open(output_file, 'w', newline='') as csvfile_out:
     reader = csv.reader(csvfile_in)
@@ -20,15 +17,16 @@ with open(input_file, newline='') as csvfile_in, open(output_file, 'w', newline=
         label = row[0]  # etiqueta
         features = list(map(float, row[1:]))
 
-        # Sólo tomamos los primeros 63 floats (21 puntos * 3 coords)
-        landmarks = np.array(features[:63]).reshape(21),
-        # Normalizamos
+        # 63 floats (21 puntos * 3 coords)
+        landmarks = np.array(features[:63]).reshape(21, 3)
+        
+        # Normalizar
         landmarks_norm = normalize_landmarks(landmarks)
 
-        # Aplanamos para guardar en fila
+        # Aplanar (1 dimensión)
         landmarks_norm_flat = landmarks_norm.flatten()
 
-        # Añadimos la etiqueta delante
+        # Añadir etiqueta delante
         row_out = [label] + list(landmarks_norm_flat)
 
         writer.writerow(row_out)

@@ -7,19 +7,24 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
 
+# Configuración
+DATA_PATH = '../data/hand_gestures_normalized.csv'
+MODEL_PATH = '../models/neuronal_network.h5'
+SCALER_PATH = '../artifacts/scaler.save'
+
 # Carga de datos
-data = pd.read_csv('../data/hand_gestures_normalized.csv')
+data = pd.read_csv(DATA_PATH)
 
 # Primera columna = etiqueta, resto = características
 X = data.iloc[:, 1:].values
-y = data.iloc[:, 0].values.astype(int)  # Asegúrate que sean ints para to_categorical
+y = data.iloc[:, 0].values.astype(int)
 
 # Normalizar datos con StandardScaler
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Guardar scaler para usar luego en inferencia
-joblib.dump(scaler, 'scaler.save')
+# Guardar scaler
+joblib.dump(scaler, SCALER_PATH)
 
 # One-hot encoding de etiquetas
 y_cat = to_categorical(y)
@@ -39,11 +44,12 @@ model = Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Entrenar
-model.fit(X_train, y_train, epochs=100, batch_size=16, validation_split=0.1)
+model.fit(X_train, y_train, epochs=50, batch_size=16, validation_split=0.1)
 
 # Evaluar
 loss, acc = model.evaluate(X_test, y_test, verbose=0)
 print(f'Accuracy en test: {acc:.4f}')
+print(f'Loss en test: {loss:.4f}')
 
 # Guardar modelo
-model.save('models/neuronal_network.h5')
+model.save(MODEL_PATH)

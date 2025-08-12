@@ -1,32 +1,26 @@
-# Entornos virtuales
 venv/
 .env/
 __pycache__/
 *.pyc
 
-# Modelos pesados y checkpoints
 *.h5
 *.ckpt
 *.pt
 *.pth
 *.save
 *.joblib
+*.pkl
 
-# Archivos de sistema
 .DS_Store
 Thumbs.db
 
-# Carpeta de datos o vídeos pesados (si no quieres subirlos)
 data/
 videos/
 
-# Archivos de logs y cachés
 *.log
 *.cache
 
-# Carpeta de notebooks checkpoints
 .ipynb_checkpoints/
 
-# Archivos temporales de editores
 *.swp
 *.swo
