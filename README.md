@@ -138,11 +138,13 @@ El modelo muestra un alto rendimiento en la clasificación de operaciones matem�
 
 # 📌 Notas
 
-El modelo se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente, como el que se especifica en el apartado Entrenamiento y Resultados.
+El conjunto de datos de entrenamiento para el modelo de demostración contaba con 400 muestras.
+
+El modelo de demostración se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente, como el que se especifica en el apartado Entrenamiento y Resultados.
 
 El modelo y el escalador se guardan y se cargan más tarde para inferencia en tiempo real.
 
-El proyecto no incluye los modelos, escaladores y datos generados.
+El proyecto no incluye los modelos, escaladores y datos generados para realizar la demostración. Se puede obtener una aplicación funcional seguiendo los pasos del apartado Demo siempre que se geneneren suficientes datos en el paso 1. 
 
 ---
 
