@@ -156,7 +156,7 @@ pip install -r requirements.txt
 
 **Precisión en test**: 96,92%
 
-**Loss en test**: 0,1858
+**Loss en test**: 0,1558
 
 El modelo muestra un alto rendimiento en la clasificación de operaciones matemáticas simples.
 
