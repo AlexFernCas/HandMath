@@ -62,7 +62,7 @@ Flujo:
 
 ---
 
-# 📌 Características principales
+# ✨ Características principales
 
 Entrenamiento con dataset propio generado programáticamente.
 
@@ -135,6 +135,34 @@ El modelo muestra un alto rendimiento en la clasificación de operaciones matem�
 <img src="./media/results_test.png" controls width="600">
 
 ---
+
+# 🔍 Tecnologías y Habilidades
+
+### Tecnologías utilizadas:
+
+**Python 3.10** – Lenguaje principal del proyecto.
+
+**TensorFlow y Keras** – Para construcción y entrenamiento de redes neuronales.
+
+**OpenCV** – Captura de imágenes y manipulación de video en tiempo real.
+
+**Pandas & Numpy** – Procesamiento y normalización de datos.
+
+
+### Habilidades desarrolladas:
+
+Preparación y normalización de datos para redes neuronales.
+
+Diseño, entrenamiento y evaluación de modelos de clasificación multiclase.
+
+Uso de técnicas de codificación one-hot y escalado de datos.
+
+Implementación de inferencia en tiempo real con cámara web.
+
+Organización modular del código y manejo de dependencias.
+
+---
+
 
 # 📌 Notas
 
