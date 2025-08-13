@@ -80,6 +80,8 @@ Codificación one-hot de etiquetas para clasificación multiclase.
 
 Implementado con TensorFlow y Keras.
 
+Cada script realiza una función específica: generación de datos, normalización, entrenamiento y demostración. Esto permite reutilizar y modificar partes sin afectar todo el flujo.
+
 Código modular y fácil de ampliar con más operaciones o complejidad.
 
 ---
