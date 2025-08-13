@@ -1,6 +1,6 @@
 # 🧮 Clasificador de Operaciones Matemáticas con TensorFlow
 
-Este proyecto implementa un modelo de red neuronal capaz de clasificar y realizar operaciones matemáticas simples en sus respectivas categorías (suma, resta, división, multiplicación) identificando la posición de la mano e interpretándola como un número.
+En este proyecto se ha implementado un modelo de red neuronal capaz de clasificar y realizar operaciones matemáticas simples en sus respectivas categorías (suma, resta, división, multiplicación) identificando la posición de la mano e interpretándola como un número.
 
 Incluye todo el flujo: desde la preparación del dataset, la normalización de datos, entrenamiento del modelo y evaluación de resultados.
 
@@ -88,19 +88,19 @@ Código modular y fácil de ampliar con más operaciones o complejidad.
 
 La carpeta principal incluye todo lo necesario para reproducir y entrenar el modelo:
 
-**src/capture_data.py** → Generación de datos. Mostrar un número con la mano y pulsar su tecla correspondiente para generar la etiqueta.
+src/capture_data.py → Generación de datos. Mostrar un número con la mano y pulsar su tecla correspondiente para generar la etiqueta.
 
-**src/normalize.py** → Normalización y preparación de datos de entrada.
+src/normalize.py → Normalización y preparación de datos de entrada.
 
-**src/neuronal_network.py** → Entrenamiento de red neuronal.
+src/neuronal_network.py → Entrenamiento de red neuronal.
 
-**src/hand_calc.py** → Detección en tiempo real de posición de la mano y operación matemática.
+src/hand_calc.py → Detección en tiempo real de posición de la mano y operación matemática.
 
-**utils/** → Funciones auxiliares para carga de datos y procesamiento.
+utils/ → Funciones auxiliares para carga de datos y procesamiento.
 
-**artifacts/scaler.save** → Objeto guardado del escalador utilizado para normalización (para inferencia futura).
+artifacts/scaler.save → Objeto guardado del escalador utilizado para normalización (para inferencia futura).
 
-**requirements.txt** → Lista de dependencias necesarias.
+requirements.txt → Lista de dependencias necesarias.
 
 ---
 
@@ -192,11 +192,11 @@ Organización modular del código y manejo de dependencias.
 
 # 📌 Notas
 
-El modelo de demostración se entrenó inicialmente con más neuronas y épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente y ajustaron los parámetros.
+El modelo de demostración se entrenó inicialmente con más neuronas y épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente, por lo que se ajustaron los parámetros.
 
-El modelo y el escalador se guardan y se cargan más tarde para inferencia en tiempo real.
+Es importante que el modelo reciba una cantidad balanceada de muestras de todas las clases para lograr un rendimiento adecuado en la clasificación. 
 
-El proyecto no incluye los modelos, escaladores y datos generados para realizar la demostración. Se puede obtener una aplicación funcional seguiendo los pasos del apartado Demo siempre que se generen suficientes datos en el paso 1. 
+El proyecto no incluye los modelos, escaladores y datos generados para realizar la demostración. Se puede obtener una aplicación funcional seguiendo los pasos del apartado Demo siempre que se genere un conjunto de datos suficiente. 
 
 ---
 
