@@ -10,7 +10,9 @@ Incluye todo el flujo: desde la preparación del dataset, la normalización de d
 
 ### Paso 1. Creación de datos de entrenamiento:
 
-Ejecución del script capture_data.py.
+```bash
+python src/capture_data.py
+```
 
 Flujo:
 
@@ -26,27 +28,33 @@ Flujo:
 
 ### Paso 2. Normalización de datos
 
-Ejecución de normalize.py.
+```bash
+python src/normalize.py
+```
 
 Flujo:
 
 * Fase 1: Convertir puntos a matriz. Cada punto tiene 3 coordenadas (X, Y, Z), y en cada captura de la mano hay 21 puntos (landmarks). Se organiza en matriz 21x3 para manipular más fácil.
 
-* Fase 2: Normalización. Se establece el centro en el punto de la muñeca y se escala según la distáncia máxima. Esto permite que no afecte el tamaño de la mano ni la distáncia a la cámara. 
+* Fase 2: Normalización. Se establece el centro en el punto de la muñeca y se escala según la distancia máxima. Esto permite que no afecte el tamaño de la mano ni la distancia a la cámara. 
 
 * Fase 3: Convertir la matriz a vector. Se "aplasta" la matriz para obtener un vector plano (1D) ya que es el tipo de dato que espera como entrada una red neuronal.
 
 
 ### Paso 3. Entrenamiento red neuronal:
 
-Ejecución del script neuronal_network.py. 
+```bash
+python src/neuronal_network.py
+``` 
 
 ![Entrenamiento modelo](./media/neuronal_network.gif)
 
 
 ### Paso 4. Demostración en tiempo real: 
 
-Ejecución script hand_calc.py.
+```bash
+python src/hand_calc.py
+``` 
 
 Flujo:
 
@@ -80,33 +88,45 @@ Código modular y fácil de ampliar con más operaciones o complejidad.
 
 La carpeta principal incluye todo lo necesario para reproducir y entrenar el modelo:
 
-src/capture_data.py → Generación de datos. Mostrar un número con la mano y pulsar su tecla correspondiente para generar la etiqueta.
+**src/capture_data.py** → Generación de datos. Mostrar un número con la mano y pulsar su tecla correspondiente para generar la etiqueta.
 
-src/normalize.py → Normalización y preparación de datos de entrada.
+**src/normalize.py** → Normalización y preparación de datos de entrada.
 
-src/neuronal_network.py → Entrenamiento de red neuronal.
+**src/neuronal_network.py** → Entrenamiento de red neuronal.
 
-src/hand_calc.py → Detección en tiempo real de posición de la mano y operación matemática.
+**src/hand_calc.py** → Detección en tiempo real de posición de la mano y operación matemática.
 
-utils/ → Funciones auxiliares para carga de datos y procesamiento.
+**utils/** → Funciones auxiliares para carga de datos y procesamiento.
 
-artifacts/scaler.save → Objeto guardado del escalador utilizado para normalización (para inferencia futura).
+**artifacts/scaler.save** → Objeto guardado del escalador utilizado para normalización (para inferencia futura).
 
-requirements.txt → Lista de dependencias necesarias.
+**requirements.txt** → Lista de dependencias necesarias.
 
 ---
 
 # 🛠️ Instalación
 
+### Requisitos previos
+
+Python 3.10 instalado
+
+Cámara 
+
 ### Crear entorno virtual con Anaconda (opcional pero recomendado)
 
+```bash
 conda create -n calc_nn python=3.10
 
 conda activate calc_nn
+```
 
 ### Instalar dependencias
 
+```bash
+pip install --upgrade pip
+
 pip install -r requirements.txt
+```
 
 ---
 
@@ -114,25 +134,31 @@ pip install -r requirements.txt
 
 ### Modelo entrenado con:
 
-Capa oculta: 64 neuronas (ReLU)
+**Datos**: Conjunto de datos de 400 muestras
 
-Capa de salida: Softmax para clasificación
+**División de datos**: 80% entrenamiento y 20% test
 
-Épocas: 50
+**Capa oculta**: 64 neuronas (ReLU)
 
-Optimizer: Adam
+**Capa de salida**: Softmax para clasificación
 
-Loss: Categorical Crossentropy
+**Épocas**: 50
+
+**Optimizer**: Adam
+
+**Loss**: Categorical Crossentropy
 
 ---
 
 # 📊 Precisión final: 
 
-96,92% de precisión en el conjunto de prueba.
+**Precisión en test**: 96,92%
+
+**Loss en test**: 0,1858
 
 El modelo muestra un alto rendimiento en la clasificación de operaciones matemáticas simples.
 
-<img src="./media/results_test.png" controls width="600">
+<img src="./media/results_test.png" width="600">
 
 ---
 
@@ -166,13 +192,11 @@ Organización modular del código y manejo de dependencias.
 
 # 📌 Notas
 
-El conjunto de datos de entrenamiento para el modelo de demostración contaba con 400 muestras.
-
-El modelo de demostración se entrenó con capa oculta (ReLU) de 128 neuronas y 100 épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente, como el que se especifica en el apartado Entrenamiento y Resultados.
+El modelo de demostración se entrenó inicialmente con más neuronas y épocas, pero se detectó que se podía conseguir el mismo rendimiento con un modelo más eficiente y ajustaron los parámetros.
 
 El modelo y el escalador se guardan y se cargan más tarde para inferencia en tiempo real.
 
-El proyecto no incluye los modelos, escaladores y datos generados para realizar la demostración. Se puede obtener una aplicación funcional seguiendo los pasos del apartado Demo siempre que se geneneren suficientes datos en el paso 1. 
+El proyecto no incluye los modelos, escaladores y datos generados para realizar la demostración. Se puede obtener una aplicación funcional seguiendo los pasos del apartado Demo siempre que se generen suficientes datos en el paso 1. 
 
 ---
 
